@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
 
     // Fetch and parse the XML file
-    fetch("blog.xml")
+    fetch("blogdata.xml")
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
