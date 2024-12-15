@@ -3,14 +3,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #41b375; /* Dark green background */
+    background-color: #8DB739
+; /* Dark green background */
     color: #000000; /* Black text */
     line-height: 1.6; /* Improve text readability */
 }
 
 /* Header styling */
 header {
-    background-color: #88f3b8; /* Lighter green for header */
+    background-color: #8DB739
+; /* Lighter green for header */
     color: #000; /* Black text in the header */
     padding: 20px;
     text-align: center;
