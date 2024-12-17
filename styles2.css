@@ -170,42 +170,44 @@ p {
 text-align: center!important;
 }
   
-
-
 form {
+  display: flex;
+  flex-direction: column; /* Stack inputs vertically */
   background: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Restrict form width */
+  margin: 0 auto; /* Center the form on the page */
 }
 
 form label {
-  display: block;
-  margin-bottom: 5px;
+  margin-top: 10px;
   font-weight: bold;
+  color: #333;
 }
 
 form input, form textarea {
   width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
+  box-sizing: border-box; /* Include padding in width */
 }
 
 form button {
+  margin-top: 20px;
   background: #333;
   color: #fff;
   border: none;
-  padding: 10px 15px;
+  padding: 10px;
   cursor: pointer;
   border-radius: 5px;
-  display: block;
-  margin: 20px auto; /* Centers the button horizontally */
+  text-align: center;
 }
 
 form button:hover {
   background: #555;
 }
-
   
