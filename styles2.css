@@ -27,6 +27,9 @@ label {
 text-align: center !important;
 }
 
+button{
+align 
+
 /* Navigation menu */
 nav ul {
     list-style: none;
@@ -180,30 +183,45 @@ text-align: center!important;
   margin: 0 auto; /* Center the form on the page */
 }
 
+form {
+  display: flex;
+  flex-direction: column; /* Stack elements vertically */
+  align-items: center;    /* Center elements horizontally */
+  background: #fff;
+  padding: 20px;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  max-width: 400px; /* Set form width */
+  margin: 0 auto;   /* Center the form on the page */
+}
+
 form label {
-  margin-top: 10px;
+  align-self: flex-start; /* Align labels to the left within the form */
+  margin: 10px 0 5px 0;
   font-weight: bold;
   color: #333;
+  width: 100%;
 }
 
 form input, form textarea {
-  width: 100%;
+  width: 100%;       /* Make input fields take full width */
   padding: 10px;
-  margin-top: 5px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Include padding in width */
+  box-sizing: border-box; /* Ensure padding doesn't affect width */
 }
 
 form button {
-  margin-top: 20px;
   background: #333;
   color: #fff;
   border: none;
-  padding: 10px;
-  cursor: pointer;
+  padding: 10px 15px;
   border-radius: 5px;
+  cursor: pointer;
+  width: 50%;        /* Adjust button width */
   text-align: center;
+  margin: 20px auto; /* Center the button with space above */
 }
 
 form button:hover {
