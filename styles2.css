@@ -155,6 +155,9 @@ color: #000 !important;
 
 .contact h2 {
 color: #333;
+text-align: center; /* Centers the text horizontally */
+  margin: 20px 0;     /* Adds space above and below the heading */
+  font-size: 1.8em;   /* Adjust the font size for emphasis */
 }
 
   display: flex;
