@@ -157,9 +157,6 @@ color: #000 !important;
 color: #333;
 }
 
-h2{  text-align: center; 
-}/* Centers the "Contact Us" text */
-form {
   display: flex;
   flex-direction: column; /* Stack inputs vertically */
   background: #fff;
