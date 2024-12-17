@@ -185,45 +185,42 @@ text-align: center!important;
 
 form {
   display: flex;
-  flex-direction: column; /* Stack elements vertically */
-  align-items: center;    /* Center elements horizontally */
+  flex-direction: column; /* Stack inputs vertically */
   background: #fff;
   padding: 20px;
   border-radius: 5px;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 400px; /* Set form width */
-  margin: 0 auto;   /* Center the form on the page */
+  max-width: 400px; /* Restrict form width */
+  margin: 0 auto; /* Center the form on the page */
 }
 
 form label {
-  align-self: flex-start; /* Align labels to the left within the form */
-  margin: 10px 0 5px 0;
+  margin-top: 10px;
   font-weight: bold;
   color: #333;
-  width: 100%;
 }
 
 form input, form textarea {
-  width: 100%;       /* Make input fields take full width */
+  width: 100%;
   padding: 10px;
-  margin-bottom: 10px;
+  margin-top: 5px;
   border: 1px solid #ccc;
   border-radius: 5px;
-  box-sizing: border-box; /* Ensure padding doesn't affect width */
+  box-sizing: border-box; /* Include padding in width */
 }
 
 form button {
+  margin-top: 20px;
   background: #333;
   color: #fff;
   border: none;
-  padding: 10px 15px;
-  border-radius: 5px;
+  padding: 10px;
   cursor: pointer;
-  width: 50%;        /* Adjust button width */
+  border-radius: 5px;
   text-align: center;
-  margin: 20px auto; /* Center the button with space above */
 }
 
 form button:hover {
   background: #555;
 }
+
