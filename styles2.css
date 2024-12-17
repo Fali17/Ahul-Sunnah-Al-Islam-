@@ -185,13 +185,10 @@ form button {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
-display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  display: block;
+  margin: 20px auto; /* Centers the button horizontally */
 }
 
 form button:hover {
   background: #555;
 }
-
