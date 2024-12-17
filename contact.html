@@ -36,6 +36,15 @@
   <textarea id="message" name="message" rows="5" required></textarea>
 
   <button type="submit">Send Message</button>
+
+<script>
+document.getElementById("contactForm").addEventListener("submit", function(event) {
+  event.preventDefault(); // Prevent actual form submission
+  alert("Thank you! Your message has been sent.");
+  // You can add AJAX here to send data to a server
+});
+</script>
+
 </form>
     </section>
   </main>
