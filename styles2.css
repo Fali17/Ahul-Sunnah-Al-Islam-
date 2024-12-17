@@ -163,7 +163,9 @@ text-align: center; /* Centers the text horizontally */
 h2 {
   text-align: center !important;
 }
-
+p {
+text-align: center!important;
+}
   display: flex;
   flex-direction: column; /* Stack inputs vertically */
   background: #fff;
