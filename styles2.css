@@ -160,6 +160,10 @@ text-align: center; /* Centers the text horizontally */
   font-size: 1.8em;   /* Adjust the font size for emphasis */
 }
 
+h2 {
+  text-align: center !important;
+}
+
   display: flex;
   flex-direction: column; /* Stack inputs vertically */
   background: #fff;
