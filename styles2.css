@@ -200,6 +200,8 @@ form button {
   padding: 10px 15px;
   cursor: pointer;
   border-radius: 5px;
+  display: block;
+  margin: 20px auto; /* Centers the button horizontally */
 }
 
 form button:hover {
