@@ -173,16 +173,18 @@ text-align: center!important;
   
 form {
   display: flex;
-  flex-direction: column; /* Stack inputs vertically */
+  flex-direction: column;
+  align-items: center;
+  background: transparent; /* Remove white background */
   padding: 20px;
   border-radius: 5px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-  max-width: 400px; /* Restrict form width */
-  margin: 0 auto; /* Center the form on the page */
+  box-shadow: none; /* Remove any shadow that creates a boxed effect */
+  max-width: 400px;
+  margin: 0 auto;
 }
 
 form label {
-  margin-top: 10px;
+  margin: 10px 0 5px 0;
   font-weight: bold;
   color: #333;
 }
