@@ -160,9 +160,10 @@ color: #000 !important;
 
 
 .contact h2 {
-color: #333;
+  text-align: center; /* Centers the "Contact Us" text */
+  color: #333;
+  margin-bottom: 20px;
 }
-
 h2 {
   text-align: center !important;
 }
