@@ -154,9 +154,10 @@ color: #000 !important;
 
 
 .contact h2 {
+  text-align: center; /* Centers the "Contact Us" text */
   color: #333;
+  margin-bottom: 20px;
 }
-
 form {
   display: flex;
   flex-direction: column; /* Stack inputs vertically */
