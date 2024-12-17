@@ -176,6 +176,7 @@ form {
   flex-direction: column;
   align-items: center;
   background: transparent; /* Remove white background */
+padding-bottom:30px;
   padding: 20px;
   border-radius: 5px;
   box-shadow: none; /* Remove any shadow that creates a boxed effect */
