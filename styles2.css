@@ -85,3 +85,15 @@ footer {
   color: #fff;
   margin-top: 20px;
 }
+
+.logo-container {
+    display: flex; /* Enables flexbox for centering */
+    justify-content: center; /* Horizontally centers content */
+    align-items: center; /* Vertically centers content */
+    height: 100vh; /* Optional: Makes the container full-screen */
+}
+
+.logo {
+    max-width: 100%; /* Ensures the logo is responsive */
+    height: auto; /* Maintains aspect ratio */
+}
