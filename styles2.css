@@ -23,6 +23,10 @@ header h1 {
     margin: 0;
 }
 
+label { 
+text-align: center ! important;
+}
+
 /* Navigation menu */
 nav ul {
     list-style: none;
