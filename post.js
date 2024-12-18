@@ -32,17 +32,31 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             // Extract current post details
-            const post = posts[currentIndex];
-            const title = post.querySelector("title").textContent;
-            const publishedDate = post.querySelector("published").textContent.split("T")[0];
-            const fullContent = post.querySelector("content").textContent;
+      const fullContent = post.querySelector("content").textContent;
 
-            // Render the full post
-            content.innerHTML = `
-                <h1>${title}</h1>
-                <p><strong>Published:</strong> ${publishedDate}</p>
-                <div>${fullContent}</div>
-            `;
+// Create a temporary container to parse the content
+const tempContainer = document.createElement("div");
+tempContainer.innerHTML = fullContent;
+
+// Process all <img> tags in the content
+const images = tempContainer.querySelectorAll("img");
+images.forEach(img => {
+    // Ensure image source is valid
+    if (img.src.startsWith("http") || img.src.startsWith("https")) {
+        img.style.maxWidth = "100%"; // Make images responsive
+        img.style.height = "auto";
+    } else {
+        // Handle broken or invalid image links (optional)
+        img.src = "https://example.com/default-image.png"; // Replace with your fallback image
+    }
+});
+
+// Render the full post
+content.innerHTML = `
+    <h1>${title}</h1>
+    <p><strong>Published:</strong> ${publishedDate}</p>
+    <div>${tempContainer.innerHTML}</div>
+`;
 
             // Set up Back button
             document.getElementById("back-button").addEventListener("click", () => {
