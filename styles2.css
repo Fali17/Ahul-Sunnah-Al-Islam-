@@ -217,3 +217,13 @@ margin-top:20px;
 form button:hover {
   background: rgba(0, 0, 0, 0.1); /* Add slight transparency on hover */
 }
+
+/* Center-align the "Read More" button or link */
+.read-more {
+    display: block; /* Makes it behave like a block-level element */
+    text-align: center; /* Centers the text inside the block */
+    margin: 10px auto; /* Centers the block within its container */
+    color: #000; /* Adjust color as needed */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: makes the text bold */
+}
