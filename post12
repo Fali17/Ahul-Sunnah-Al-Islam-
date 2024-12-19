@@ -1,4 +1,4 @@
-documents.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Get the "title" parameter from the URL
     const params = new URLSearchParams(window.location.search);
     const postTitle = params.get("title");
