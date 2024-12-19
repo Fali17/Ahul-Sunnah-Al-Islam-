@@ -25,8 +25,19 @@ document.addEventListener("DOMContentLoaded", () => {
             console.log(`Loaded ${posts.length} posts from the XML.`);
             if (!posts.length) {
                 console.error("No posts found in the XML file.");
+                content.innerHTML = `
+                    <h2>No Posts Available</h2>
+                    <p>There are no posts to display. Please try again later.</p>
+                `;
                 return;
             }
+
+            // Log all posts for debugging purposes
+            posts.forEach((post, index) => {
+                const title = post.querySelector("title")?.textContent || "No title";
+                const content = post.querySelector("content")?.textContent || "No content";
+                console.log(`Post ${index + 1}:`, { title, content });
+            });
 
             // Find the current post index
             const currentIndex = posts.findIndex(post => 
@@ -36,8 +47,9 @@ document.addEventListener("DOMContentLoaded", () => {
             if (currentIndex === -1) {
                 console.error(`Post with title "${postTitle}" not found.`);
                 content.innerHTML = `
-                    <p>Error: Post not found.</p>
-                    <p>Please ensure the post exists and the URL is correct.</p>
+                    <h2>Post Not Found</h2>
+                    <p>The requested post could not be loaded. It might have been removed or renamed.</p>
+                    <a href="index.html">Return to Homepage</a>
                 `;
                 return;
             }
@@ -64,7 +76,7 @@ document.addEventListener("DOMContentLoaded", () => {
                     }
                 } catch (error) {
                     console.warn(`Image loading error: ${error.message}`);
-                    img.src = "https://example.com/default-image.png"; // Replace with your fallback image
+                    img.src = "https://via.placeholder.com/300"; // Replace with your fallback image
                 }
             });
 
@@ -97,6 +109,9 @@ document.addEventListener("DOMContentLoaded", () => {
         })
         .catch(error => {
             console.error(`Error loading post: ${error.message}`);
-            content.innerHTML = `<p>Error loading post: ${error.message}</p>`;
+            content.innerHTML = `
+                <h2>Error Loading Post</h2>
+                <p>There was a problem loading the post. Please try again later.</p>
+            `;
         });
 });
