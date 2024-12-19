@@ -26,10 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
                 decodeURIComponent(post.querySelector("title").textContent.trim()) === postTitle.trim()
             );
 
-            if (currentIndex === -1) {
-                content.innerHTML = "<p>Post not found.</p>";
-                return;
-            }
+           if (currentIndex === -1) {
+    console.error(`Post with title "${postTitle}" not found.`);
+    content.innerHTML = `
+        <p>Error: Post not found.</p>
+        <p>Please ensure the post exists and the URL is correct.</p>
+    `;
+    return;
+}
 
             // Extract current post details
             const post = posts[currentIndex];
