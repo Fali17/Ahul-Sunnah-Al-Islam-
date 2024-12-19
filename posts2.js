@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             // Find the current post index
             const currentIndex = posts.findIndex(post => 
-                post.querySelector("title").textContent.trim() === postTitle.trim()
+                decodeURIComponent(post.querySelector("title").textContent.trim()) === postTitle.trim()
             );
 
             if (currentIndex === -1) {
