@@ -44,15 +44,18 @@ document.addEventListener("DOMContentLoaded", () => {
             // Process all <img> tags in the content
             const images = tempContainer.querySelectorAll("img");
             images.forEach(img => {
-                // Ensure image source is valid
-                if (img.src.startsWith("http") || img.src.startsWith("https")) {
-                    img.style.maxWidth = "100%"; // Make images responsive
-                    img.style.height = "auto";
-                } else {
-                    // Handle broken or invalid image links
-                    img.src = "https://example.com/default-image.png"; // Replace with your fallback image
-                }
-            });
+    try {
+        if (img.src.startsWith("http") || img.src.startsWith("https")) {
+            img.style.maxWidth = "100%";
+            img.style.height = "auto";
+        } else {
+            throw new Error("Invalid image source");
+        }
+    } catch (error) {
+        console.warn(`Image loading error: ${error.message}`);
+        img.src = "https://example.com/default-image.png"; // Replace with your fallback image
+    }
+});
 
             // Render the full post
             content.innerHTML = `
