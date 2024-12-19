@@ -80,6 +80,7 @@ main {
 
 .post a:hover {
     text-decoration: underline;
+    text-align: center;
 }
 
 /* Footer styling */
@@ -151,10 +152,12 @@ color: #000 !important;
 .post a {
     color: #006600;
     text-decoration: none;
+    text-align: center;
 }
 
 .post a:hover {
     text-decoration: underline;
+    text-align: center;
 }
 
 
