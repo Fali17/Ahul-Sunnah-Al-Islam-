@@ -150,15 +150,24 @@ color: #000 !important;
 }
 
 .post a {
-    color: #006600;
-    text-decoration: none;
-    text-align: center;
+   display: block; /* Makes it behave like a block-level element */
+    text-align: center; /* Centers the text inside the block */
+    margin: 10px auto; /* Centers the block within its container */
+    color: #000; /* Adjust color as needed */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: makes the text bold */
 }
 
+
 .post a:hover {
-    text-decoration: underline;
-    text-align: center;
+    display: block; /* Makes it behave like a block-level element */
+    text-align: center; /* Centers the text inside the block */
+    margin: 10px auto; /* Centers the block within its container */
+    color: #000; /* Adjust color as needed */
+    text-decoration: none; /* Remove underline */
+    font-weight: bold; /* Optional: makes the text bold */
 }
+
 
 
 
