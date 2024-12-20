@@ -236,7 +236,7 @@ form button:hover {
 
 /* Center-align the "Read More" button or link */
 .content {
-    display: block; /* Makes it behave like a block-level element */
+   
     text-align: center; /* Centers the text inside the block */
     margin: 10px auto; /* Centers the block within its container */
     color: #000; /* Adjust color as needed */
