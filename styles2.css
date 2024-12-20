@@ -105,7 +105,7 @@ color: #000 !important;
 
 .logo {
     max-width: 100%; /* Ensures the logo is responsive */
-    height: auto; /* Maintains aspect ratio */
+   
 }
 
 /* Center the navigation buttons */
