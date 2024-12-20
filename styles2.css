@@ -76,9 +76,7 @@ main {
        
         color: #000; /* Black links */
     text-decoration: none;
-    font-weight: bold;   
-    justify-content: center; /* Horizontally centers content */
-    align-items: center; /* Vertically centers content */
+    
     
 
 .post a:hover {
@@ -156,8 +154,7 @@ color: #000 !important;
   
          color: #006600;
     text-decoration: none;  
-    justify-content: center; /* Horizontally centers content */
-    align-items: center; /* Vertically centers content */
+   }
    
 
 
