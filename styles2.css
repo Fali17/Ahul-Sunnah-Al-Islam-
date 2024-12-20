@@ -76,6 +76,8 @@ main {
        
         color: #000; /* Black links */
     text-decoration: none;
+    font-weight: bold;
+text-align: center !important;
     }
     
 
@@ -156,7 +158,9 @@ color: #000 !important;
 .post a {
   
          color: #006600;
-    text-decoration: none;  
+    text-decoration: none; 
+font-weight: bold;
+text-align: center !important; 
    }
    
 
