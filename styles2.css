@@ -154,7 +154,8 @@ color: #000 !important;
 
 .post a {
   
-       
+         color: #006600;
+    text-decoration: none;  
     justify-content: center; /* Horizontally centers content */
     align-items: center; /* Vertically centers content */
    
