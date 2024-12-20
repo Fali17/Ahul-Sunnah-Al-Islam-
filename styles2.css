@@ -97,9 +97,12 @@ footer {
 color: #000 !important;
 
 .logo-container {
-    display: flex; /* Enables flexbox for centering */
-    justify-content: center; /* Horizontally centers content */
-    align-items: center; /* Vertically centers content */
+ 
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes extra spacing below the image */
+    margin: 0 auto; /* Centers the image */
+
    
 }
 
