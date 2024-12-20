@@ -73,7 +73,7 @@ main {
 }
 
 .post a {
-        display: block; /* Makes it behave like a block-level element */
+       
     text-align: center; /* Centers the text inside the block */
     margin: 10px auto; /* Centers the block within its container */
     color: #000; /* Adjust color as needed */
@@ -82,7 +82,7 @@ main {
 }
 
 .post a:hover {
-       display: block; /* Makes it behave like a block-level element */
+      
     text-align: center; /* Centers the text inside the block */
     margin: 10px auto; /* Centers the block within its container */
     color: #000; /* Adjust color as needed */
@@ -157,7 +157,7 @@ color: #000 !important;
 }
 
 .post a {
-   display: block; /* Makes it behave like a block-level element */
+  
     text-align: center; /* Centers the text inside the block */
     margin: 10px auto; /* Centers the block within its container */
     color: #000; /* Adjust color as needed */
@@ -167,7 +167,7 @@ color: #000 !important;
 
 
 .post a:hover {
-    display: block; /* Makes it behave like a block-level element */
+    
     text-align: center; /* Centers the text inside the block */
     margin: 10px auto; /* Centers the block within its container */
     color: #000; /* Adjust color as needed */
