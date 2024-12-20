@@ -77,7 +77,7 @@ main {
         display: flex; /* Enables flexbox for centering */
     justify-content: center; /* Horizontally centers content */
     align-items: center; /* Vertically centers content */
-    height: 100vh; /* Optional: Makes the container full-screen */
+    
 
 .post a:hover {
       
@@ -155,8 +155,7 @@ color: #000 !important;
        display: flex; /* Enables flexbox for centering */
     justify-content: center; /* Horizontally centers content */
     align-items: center; /* Vertically centers content */
-    height: 100vh; /* Optional: Makes the container full-screen */
-}
+   
 
 
 .post a:hover {
