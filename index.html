@@ -6,19 +6,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ahlu-Sunnah Al Islam</title>
     <link rel="stylesheet" href="styles2.css">
+<link rel="stylesheet" href="sidebar.css">
 </head>
 <body>
 
-<!-- Include Sidebar HTML -->
-<div id="sidebar-container">
-  <!-- Use a server-side include or copy the contents of sidebar.html here -->
+<div class="sidebar" id="sidebar">
+  <button class="close-btn" onclick="toggleSidebar()">×</button>
+  <ul>
+    <li><a href="index.html">Home</a></li>
+    <li><a href="ahlulsunnah.html">Posts</a></li>
+    <li><a href="about.html">About</a></li>
+    <li><a href="contact.html">Contact</a></li>
+  </ul>
 </div>
-
-<!-- Include Sidebar CSS -->
-<link rel="stylesheet" href="sidebar.css">
-
-<!-- Include Sidebar JavaScript -->
-<script src="sidebar.js" defer></script>
+ <div class="logo-container">
+        <img src="logo.png" alt="Ahlu-Sunnah Al Islam Logo" class="logo">
+</div>
+  <button class="open-btn" onclick="toggleSidebar()">☰</button>
+  <!-- Page-Specific Content Goes Here -->
+</div>
 
   <header>
    <div class="logo-container">
@@ -46,7 +52,7 @@
     </footer>
 
     <script src="scripts.js"></script>
-
+<script src="sidebar.js" defer></script>
 
 
 </body>
