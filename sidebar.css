@@ -44,12 +44,7 @@
   cursor: pointer;
 }
 
-/* Main content styling */
-.main-content {
-  margin-left: 0;
-  padding: 20px;
-  transition: margin-left 0.3s;
-}
+
 
 .open-btn {
   background: none;
@@ -63,6 +58,15 @@
   left: 0;
 }
 
-.main-content.shift {
-  margin-left: 250px;
+.logo-container {
+
+    max-width: 100%; /* Ensures the image does not exceed the container's width */
+    height: auto; /* Maintains the aspect ratio */
+    display: block; /* Removes extra spacing below the image */
+    margin: 0 auto; /* Centers the image */
+
+
 }
+
+.logo {
+    max-width: 100%; /* Ensures the logo is responsive */
