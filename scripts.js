@@ -50,3 +50,11 @@ document.addEventListener("DOMContentLoaded", () => {
         // You can load the full post content dynamically here.
     };
 });
+
+function toggleSidebar() {
+  const sidebar = document.getElementById('sidebar');
+  const mainContent = document.querySelector('.main-content');
+  
+  sidebar.classList.toggle('open');
+  mainContent.classList.toggle('shift');
+}
