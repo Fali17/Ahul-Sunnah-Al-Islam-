@@ -242,6 +242,7 @@ form button:hover {
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 20px;
+outline:none;
 }
 
 
