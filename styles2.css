@@ -236,7 +236,7 @@ form button:hover {
   left: -250px;
   width: 250px;
   height: 100%;
-  background-color: #111;
+  background-color: #39b73b;
   color: #fff;
   overflow-x: hidden;
   transition: 0.3s;
@@ -253,7 +253,7 @@ form button:hover {
 }
 
 .sidebar ul li a {
-  color: #fff;
+  color: #111;
   text-decoration: none;
   display: block;
   transition: 0.3s;
