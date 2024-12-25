@@ -237,7 +237,7 @@ form button:hover {
   width: 250px;
   height: 100%;
   background-color: #39b73b;
-  color: #fff;
+  color: #111;
   overflow-x: hidden;
   transition: 0.3s;
   padding-top: 20px;
