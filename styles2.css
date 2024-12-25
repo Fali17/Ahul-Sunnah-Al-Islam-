@@ -253,7 +253,6 @@ form button:hover {
 }
 
 .sidebar ul li a {
-  color: #111;
   text-decoration: none;
   display: block;
   transition: 0.3s;
