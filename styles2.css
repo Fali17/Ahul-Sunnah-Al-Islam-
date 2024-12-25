@@ -258,9 +258,6 @@ form button:hover {
   transition: 0.3s;
 }
 
-.sidebar ul li a:hover {
-  background-color: #111;
-}
 
 /* Close button */
 .close-btn {
