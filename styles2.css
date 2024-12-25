@@ -274,6 +274,13 @@ sidebar ul {
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
+  outline: none; /* Removes the default browser focus outline */
+}
+
+.close-btn:active, .close-btn:focus {
+  border-color: black; /* Creates the black outline */
+  background-color: transparent; /* Ensures the inside remains transparent */
+  color: black; /* Optional: Changes text color to black for visibility */
 }
 
 
