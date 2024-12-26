@@ -262,26 +262,24 @@ sidebar ul {
 }
 
 
-
 /* Close button */
 .close-btn {
   position: absolute;
   top: 10px;
   right: 20px;
-  border: 2px solid transparent; /* Transparent border by default */
+  border: 2px solid transparent; /* Transparent border */
   background-color: transparent; /* Transparent background */
-  color: black; /* Black text */
+  color: black !important; /* Force text to be black */
   font-weight: bold; /* Bold text */
   padding: 10px;
   cursor: pointer;
   transition: 0.3s;
-  outline: none; /* Removes default browser focus outline */
+  outline: none; /* Removes the default browser focus outline */
 }
 
 .close-btn:active, .close-btn:focus {
-  border-color: black; /* Adds black outline when active or focused */
+  border-color: black; /* Black outline on interaction */
 }
-
 
 
 .open-btn {
