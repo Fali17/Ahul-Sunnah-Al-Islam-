@@ -27,14 +27,27 @@ document.addEventListener("DOMContentLoaded", () => {
         if (!response.ok) throw new Error("Primary feed failed");
         return response.json();
       })
+      .then(res => res.json())
       .then(data => {
+        console.log("Feed title:", data.feed.title.$t);
+        if (!data.feed.entry) {
+          console.warn("No posts found in feed");
+          return;
+        }
+        console.log("Number of posts:", data.feed.entry.length);
+        data.feed.entry.forEach(post => {
+          console.log("Post title:", post.title.$t);
+          console.log("Post URL:", post.link.find(l => l.rel === "alternate")?.href);
+        });
+      });
+      /* .then(data => {
           console.log("JSON response:", data);
           const posts = data.feed?.entry;
           if (!posts || posts.length === 0) {
             throw new Error("No posts in JSON feed");
           }
           posts.forEach(displayJSONPost);
-      })
+      }) */
       .catch(error => {
         console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
     
