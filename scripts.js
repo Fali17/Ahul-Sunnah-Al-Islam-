@@ -27,7 +27,6 @@ document.addEventListener("DOMContentLoaded", () => {
       if (!response.ok) throw new Error("Primary feed failed");
       return response.json();
     })
-    .then(res => res.json())
     .then(data => {
       console.log("Feed title:", data.feed.title.$t);
       if (!data.feed.entry) {
