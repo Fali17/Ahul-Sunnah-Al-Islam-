@@ -1,48 +1,66 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const content = document.getElementById("content");
+    const content = document.getElementById("blog-container");
 
-    // Fetch and parse the XML file
-    fetch("blogdata.xml")
-        .then(response => response.text())
-        .then(data => {
+    // Try loading from live Blogger JSON feed first
+    fetch("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json")
+      .then(response => {
+        if (!response.ok) throw new Error("Primary feed failed");
+        return response.json();
+      })
+      .then(data => {
+        const posts = data.feed.entry;
+        if (!posts || posts.length === 0) {
+          throw new Error("No posts in JSON feed");
+        }
+        posts.forEach(displayJSONPost);
+      })
+      .catch(error => {
+        console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
+    
+        // Fallback to local XML file
+        fetch("blogdata.xml")
+          .then(response => response.text())
+          .then(data => {
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(data, "application/xml");
-
-            // Check if valid XML
+    
             if (xmlDoc.querySelector("parsererror")) {
-                content.innerHTML = "<p>Error loading posts. Please check the XML file.</p>";
-                return;
+              content.innerHTML = "<p>Error loading backup XML. Please check the file.</p>";
+              return;
             }
-
-            // Extract and display posts
+    
             const posts = Array.from(xmlDoc.getElementsByTagName("entry"))
-                .filter(entry => entry.querySelector("category[term='http://schemas.google.com/blogger/2008/kind#post']"));
-
+              .filter(entry =>
+                entry.querySelector("category[term='http://schemas.google.com/blogger/2008/kind#post']")
+              );
+    
             if (posts.length === 0) {
-                content.innerHTML = "<p>No posts available.</p>";
+              content.innerHTML = "<p>No posts available in backup.</p>";
             } else {
-                posts.forEach(post => displayPost(post));
+              posts.forEach(displayXMLPost);
             }
-        })
-        .catch(error => {
-            content.innerHTML = `<p>Error loading posts: ${error.message}</p>`;
-        });
+          })
+          .catch(fallbackError => {
+            console.error("Error loading fallback XML:", fallbackError);
+            content.innerHTML = "<p>Failed to load blog posts from both sources.</p>";
+          });
+      });
 
     function displayPost(post) {
-    const title = post.querySelector("title").textContent;
-    const publishedDate = post.querySelector("published").textContent.split("T")[0];
-    const contentSnippet = post.querySelector("content")?.textContent.substring(0, 200) || "No content available.";
-
-    const postDiv = document.createElement("div");
-    postDiv.className = "post";
-    postDiv.innerHTML = `
-        <h2>${title}</h2>
-        <p><strong>Published:</strong> ${publishedDate}</p>
-        <p>${contentSnippet}...</p>
-        <a href="post.html?title=${encodeURIComponent(title)}" target="_blank">Read More</a>
-    `;
-    content.appendChild(postDiv);
-}
+        const title = post.querySelector("title").textContent;
+        const publishedDate = post.querySelector("published").textContent.split("T")[0];
+        const contentSnippet = post.querySelector("content")?.textContent.substring(0, 200) || "No content available.";
+    
+        const postDiv = document.createElement("div");
+        postDiv.className = "post";
+        postDiv.innerHTML = `
+            <h2>${title}</h2>
+            <p><strong>Published:</strong> ${publishedDate}</p>
+            <p>${contentSnippet}...</p>
+            <a href="post.html?title=${encodeURIComponent(title)}" target="_blank">Read More</a>
+        `;
+        content.appendChild(postDiv);
+    }
 
     // Full post view function (placeholder, to be implemented)
     window.viewFullPost = (title) => {
