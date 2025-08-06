@@ -1,0 +1,26 @@
+name: Update Blogger Feed
+
+on:
+  schedule:
+    - cron: '0 * * * *' # every hour
+  workflow_dispatch:     # allow manual trigger from GitHub Actions UI
+
+jobs:
+  fetch-blog-feed:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Fetch Blogger feed and save as blogdata.json
+        run: |
+          curl -s "https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json" -o blogdata.json
+
+      - name: Commit and push changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add blogdata.json
+          git commit -m "Update blogdata.json from Blogger feed" || echo "No changes to commit"
+          git push
