@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Try loading from live Blogger JSON feed first
-    fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json"))
+    fetch("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json")
       .then(response => {
         if (!response.ok) throw new Error("Primary feed failed");
         return response.json();
