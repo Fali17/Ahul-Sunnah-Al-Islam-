@@ -22,23 +22,12 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   // Try loading from live Blogger JSON feed first
-  fetch(feedUrl)
-    .then(response => {
-      if (!response.ok) throw new Error("Primary feed failed");
-      return response.json();
-    })
+  fetch("blogdata.json")
+    .then(res => res.json())
     .then(data => {
-      console.log("Feed title:", data.feed.title.$t);
-      if (!data.feed.entry) {
-        console.warn("No posts found in feed");
-        return;
-      }
-      console.log("Number of posts:", data.feed.entry.length);
-      data.feed.entry.forEach(post => {
-        console.log("Post title:", post.title.$t);
-        console.log("Post URL:", post.link.find(l => l.rel === "alternate")?.href);
-      });
-    })
+      const posts = data.feed?.entry || [];
+      posts.forEach(displayPost); // your custom render function
+    });
     .catch(error => {
       console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
 
