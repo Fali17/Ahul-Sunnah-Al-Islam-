@@ -1,6 +1,25 @@
 document.addEventListener("DOMContentLoaded", () => {
     const content = document.getElementById("content");
 
+    function displayXMLPost(post) {
+      const title = post.getElementsByTagName("title")[0]?.textContent || "Untitled";
+      const contentHTML = post.getElementsByTagName("content")[0]?.textContent || "No content available.";
+      const publishedDate = post.getElementsByTagName("published")[0]?.textContent.split("T")[0] || "Unknown date";
+      const link = Array.from(post.getElementsByTagName("link"))
+        .find(l => l.getAttribute("rel") === "alternate")
+        ?.getAttribute("href") || "#";
+    
+      const postElement = document.createElement("div");
+      postElement.classList.add("post");
+      postElement.innerHTML = `
+        <h2>${title}</h2>
+        <p><strong>Published:</strong> ${publishedDate}</p>
+        <div>${contentHTML.substring(0, 150)}...</div>
+        <a href="${link}" target="_blank">Read More</a>
+      `;
+      content.appendChild(postElement);
+    }
+
     // Try loading from live Blogger JSON feed first
     fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json"))
       .then(response => {
