@@ -21,13 +21,29 @@ document.addEventListener("DOMContentLoaded", () => {
     content.appendChild(postElement);
   }
 
+  function displayJSONPost(post) {
+    const title = post.title?.$t || "Untitled";
+    const publishedDate = post.published?.$t?.split("T")[0] || "Unknown date";
+    const contentSnippet = post.content?.$t?.substring(0, 200) || "No content available.";
+    const link = post.link.find(l => l.rel === "alternate")?.href || "#";
+  
+    const postDiv = document.createElement("div");
+    postDiv.className = "post";
+    postDiv.innerHTML = `
+      <h2>${title}</h2>
+      <p><strong>Published:</strong> ${publishedDate}</p>
+      <p>${contentSnippet}...</p>
+      <a href="${link}" target="_blank">Read More</a>
+    `;
+    content.appendChild(postDiv);
+}
+
   // Try loading from live Blogger JSON feed first
   fetch("blogdata.json")
     .then(res => res.json())
     .then(data => {
       const posts = data.feed?.entry || [];
-      posts.forEach(displayPost); // your custom render function
-      console.log(posts.title)
+      posts.forEach(displayJSONPost); // your custom render function
     });
     .catch(error => {
       console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
@@ -52,7 +68,7 @@ document.addEventListener("DOMContentLoaded", () => {
           if (posts.length === 0) {
             content.innerHTML = "<p>No posts available in backup.</p>";
           } else {
-            posts.forEach(displayPost);
+            posts.forEach(displayXMLPost);
           }
         })
         .catch(fallbackError => {
