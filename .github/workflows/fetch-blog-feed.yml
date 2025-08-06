@@ -17,10 +17,13 @@ jobs:
         run: |
           curl -s "https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json" -o blogdata.json
 
-      - name: Commit and push changes
+      - name: Commit and push if changed
         run: |
           git config user.name "GitHub Actions"
-          git config user.email "actions@github.com"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add blogdata.json
-          git commit -m "Update blogdata.json from Blogger feed" || echo "No changes to commit"
+          git diff --cached --quiet || git commit -m "Update blogdata.json from Blogger feed"
           git push
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
