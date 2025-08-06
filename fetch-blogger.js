@@ -1,4 +1,4 @@
-const feedUrl = "https://www.blogger.com/u/1/blog/themes/edit/249727478542539485?hl=en-GB";
+const feedUrl = "https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json";
 
 const blogContainer = document.getElementById("blog-container");
 
