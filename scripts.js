@@ -1,5 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const content = document.getElementById("blog-container");
+    const content = document.getElementById("content");
 
     // Try loading from live Blogger JSON feed first
     fetch("https://api.allorigins.win/get?url=" + encodeURIComponent("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json"))
