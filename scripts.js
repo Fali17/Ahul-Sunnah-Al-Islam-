@@ -27,11 +27,12 @@ document.addEventListener("DOMContentLoaded", () => {
         return response.json();
       })
       .then(data => {
-        const posts = data.feed.entry;
-        if (!posts || posts.length === 0) {
-          throw new Error("No posts in JSON feed");
-        }
-        posts.forEach(displayJSONPost);
+          console.log("JSON response:", data);
+          const posts = data.feed?.entry;
+          if (!posts || posts.length === 0) {
+            throw new Error("No posts in JSON feed");
+          }
+          posts.forEach(displayJSONPost);
       })
       .catch(error => {
         console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
