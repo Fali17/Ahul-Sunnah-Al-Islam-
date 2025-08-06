@@ -44,7 +44,7 @@ document.addEventListener("DOMContentLoaded", () => {
     .then(data => {
       const posts = data.feed?.entry || [];
       posts.forEach(displayJSONPost); // your custom render function
-    });
+    })
     .catch(error => {
       console.warn("Primary feed failed, falling back to blogdata.xml:", error.message);
 
