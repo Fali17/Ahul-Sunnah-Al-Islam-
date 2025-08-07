@@ -7,6 +7,7 @@ body {
 ; /* Dark green background */
     color: #000000; /* Black text */
     line-height: 1.6; /* Improve text readability */
+font-size: 16px; /* or another value you prefer */
 }
 
 /* Header styling */
