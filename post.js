@@ -49,7 +49,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 if (window.history.length > 1) {
                     window.history.back();
                 } else {
-                    window.location.href = "index.html"; // Replace with your homepage URL
+                    window.location.href = "https://alsunnahalislam.blogspot.com/feeds/posts/default"; // Replace with your homepage URL
                 }
             });
 
