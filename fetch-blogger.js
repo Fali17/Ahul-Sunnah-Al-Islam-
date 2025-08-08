@@ -1,4 +1,4 @@
-const feedUrl = "https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json";
+const feedUrl = "https://alsunnahalislam.blogspot.com/feeds/posts/default";
 
 const blogContainer = document.getElementById("blog-container");
 
