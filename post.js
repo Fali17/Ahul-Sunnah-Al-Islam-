@@ -12,7 +12,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     // Fetch the XML file containing posts
-    fetch("blogdata.xml")
+    fetch("https://alsunnahalislam.blogspot.com/feeds/posts/default?alt=json")
         .then(response => response.text())
         .then(data => {
             const parser = new DOMParser();
